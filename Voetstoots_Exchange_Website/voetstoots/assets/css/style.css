@@ -1,0 +1,303 @@
+/* ============================================================
+   assets/css/style.css — Voetstoots Exchange Custom Styles
+   ============================================================ */
+
+/* ── Root variables ── */
+:root {
+    --ve-green:   #1a6b3a;
+    --ve-gold:    #f0a500;
+    --ve-dark:    #1a1a2e;
+    --ve-light:   #f8f9fa;
+    --ve-muted:   #6c757d;
+    --ve-radius:  10px;
+    --ve-shadow:  0 2px 12px rgba(0,0,0,0.08);
+}
+
+/* ── Base ── */
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: #f5f6fa;
+    color: #222;
+}
+
+a { color: var(--ve-green); }
+a:hover { color: var(--ve-gold); }
+
+/* ── Top bar ── */
+.topbar {
+    background-color: var(--ve-green);
+    font-size: 0.78rem;
+}
+
+/* ── Navbar override ── */
+.navbar.bg-primary {
+    background-color: var(--ve-green) !important;
+}
+.btn-warning {
+    background-color: var(--ve-gold);
+    border-color: var(--ve-gold);
+    color: #fff;
+    font-weight: 600;
+}
+.btn-warning:hover {
+    background-color: #d4900a;
+    border-color: #d4900a;
+    color: #fff;
+}
+
+/* ── Zulu label ── */
+.zulu-label {
+    font-style: italic;
+    opacity: 0.85;
+}
+
+/* ── Hero section ── */
+.hero {
+    background: linear-gradient(135deg, var(--ve-green) 0%, #145c30 60%, #0d3d20 100%);
+    color: #fff;
+    padding: 90px 0 70px;
+    position: relative;
+    overflow: hidden;
+}
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: #f5f6fa;
+    clip-path: ellipse(55% 100% at 50% 100%);
+}
+.hero h1 { font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 800; }
+.hero .tagline {
+    font-size: 1.1rem;
+    opacity: 0.85;
+    font-style: italic;
+}
+
+/* ── Category cards ── */
+.category-card {
+    border: none;
+    border-radius: var(--ve-radius);
+    box-shadow: var(--ve-shadow);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    background: #fff;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+.category-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+    color: var(--ve-green);
+}
+.category-card .cat-icon {
+    font-size: 2.2rem;
+    color: var(--ve-green);
+    margin-bottom: 0.6rem;
+}
+
+/* ── Listing cards ── */
+.listing-card {
+    border: none;
+    border-radius: var(--ve-radius);
+    box-shadow: var(--ve-shadow);
+    transition: transform 0.2s, box-shadow 0.2s;
+    overflow: hidden;
+    background: #fff;
+    height: 100%;
+}
+.listing-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.13);
+}
+.listing-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.listing-card .card-body { padding: 1rem; }
+.listing-card .price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--ve-green);
+}
+.listing-card .badge-category {
+    background-color: #e8f5ee;
+    color: var(--ve-green);
+    font-size: 0.72rem;
+    font-weight: 600;
+    border-radius: 20px;
+    padding: 3px 10px;
+}
+
+/* ── Section headings ── */
+.section-heading {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--ve-dark);
+    position: relative;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+.section-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 4px;
+    background: var(--ve-gold);
+    border-radius: 2px;
+}
+
+/* ── Forms ── */
+.form-card {
+    background: #fff;
+    border-radius: var(--ve-radius);
+    box-shadow: var(--ve-shadow);
+    padding: 2.5rem;
+}
+.form-control:focus, .form-select:focus {
+    border-color: var(--ve-green);
+    box-shadow: 0 0 0 0.2rem rgba(26, 107, 58, 0.15);
+}
+.btn-primary {
+    background-color: var(--ve-green);
+    border-color: var(--ve-green);
+}
+.btn-primary:hover {
+    background-color: #145c30;
+    border-color: #145c30;
+}
+.btn-outline-primary {
+    color: var(--ve-green);
+    border-color: var(--ve-green);
+}
+.btn-outline-primary:hover {
+    background-color: var(--ve-green);
+    border-color: var(--ve-green);
+}
+
+/* ── Dashboard ── */
+.stat-card {
+    background: #fff;
+    border-radius: var(--ve-radius);
+    box-shadow: var(--ve-shadow);
+    padding: 1.5rem;
+    border-left: 5px solid var(--ve-green);
+}
+.stat-card.gold  { border-left-color: var(--ve-gold); }
+.stat-card.red   { border-left-color: #dc3545; }
+.stat-card.blue  { border-left-color: #0d6efd; }
+.stat-card .stat-value {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--ve-dark);
+}
+.stat-card .stat-label {
+    font-size: 0.85rem;
+    color: var(--ve-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* ── Seller profile ── */
+.seller-avatar {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--ve-green);
+}
+.seller-badge {
+    background: #e8f5ee;
+    color: var(--ve-green);
+    font-size: 0.78rem;
+    font-weight: 600;
+    border-radius: 20px;
+    padding: 3px 12px;
+}
+
+/* ── Checkout ── */
+.order-summary {
+    background: #fff;
+    border-radius: var(--ve-radius);
+    box-shadow: var(--ve-shadow);
+    padding: 1.5rem;
+}
+.payment-option {
+    border: 2px solid #dee2e6;
+    border-radius: var(--ve-radius);
+    padding: 1rem;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+.payment-option.selected,
+.payment-option:hover {
+    border-color: var(--ve-green);
+}
+
+/* ── Admin ── */
+.admin-sidebar {
+    background: var(--ve-dark);
+    min-height: 100vh;
+    width: 240px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding-top: 1rem;
+}
+.admin-sidebar .brand {
+    color: var(--ve-gold);
+    font-weight: 800;
+    font-size: 1.1rem;
+    padding: 0.5rem 1.5rem 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.admin-sidebar .nav-link {
+    color: rgba(255,255,255,0.7);
+    padding: 0.65rem 1.5rem;
+    font-size: 0.9rem;
+    transition: background 0.15s;
+}
+.admin-sidebar .nav-link:hover,
+.admin-sidebar .nav-link.active {
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+}
+.admin-sidebar .nav-link i { width: 22px; }
+.admin-content {
+    margin-left: 240px;
+    padding: 2rem;
+    min-height: 100vh;
+    background: #f5f6fa;
+}
+
+/* ── Status badges ── */
+.status-active    { background: #d1fae5; color: #065f46; }
+.status-pending   { background: #fef3c7; color: #92400e; }
+.status-sold      { background: #dbeafe; color: #1e40af; }
+.status-removed   { background: #fee2e2; color: #991b1b; }
+.status-badge {
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 20px;
+    padding: 3px 12px;
+}
+
+/* ── Footer ── */
+.footer { font-size: 0.88rem; }
+
+/* ── Responsive tweaks ── */
+@media (max-width: 768px) {
+    .hero { padding: 60px 0 50px; }
+    .admin-sidebar { display: none; }
+    .admin-content { margin-left: 0; }
+    .form-card { padding: 1.5rem; }
+}
